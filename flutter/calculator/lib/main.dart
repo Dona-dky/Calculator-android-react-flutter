@@ -63,7 +63,6 @@ class _CalculatorState extends State<Calculator> {
     case '-':
     case '/':
     case '*':
-      
       onNewSymbol(value);
       break;
       
@@ -74,8 +73,10 @@ class _CalculatorState extends State<Calculator> {
       onDecimal();
       break;
     case 'C':
-    case 'CE':
       onDelete();
+      break;
+    case 'CE':
+      onDeleteAll();
  }
 
  // Force l'interface à se redessiner
@@ -105,6 +106,10 @@ void onDecimal() {
 }
 
 void onDelete() {
+ // TODO
+}
+
+void onDeleteAll() {
  // TODO
 }
 
