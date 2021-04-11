@@ -30,24 +30,21 @@ class _CalculatorState extends State<Calculator> {
   // 
 
   static const List<List<String>> grid = <List<String>>[
-  <String>["7", "8", "9", "-"],
-  <String>["4", "5", "6", "*"],
-  <String>["1", "2", "3", "/"],
-  <String>["0", ".", "=", "+"],
+  <String>["C", "CE", "", "/"],
+  <String>["7", "8", "9", "*"],
+  <String>["4", "5", "6", "-"],
+  <String>["1", "2", "3", "+"],
+  <String>["0", ".", "", "="],
   ];
 
 
-
+  var answer = '';
   double? input;
   double? previousInput;
   String? symbol;
 
   void onItemClicked(String value) {
   print('On Click $value');
-
-  List<int> list = [1, 2, 3];
-  print(list); // [1, 2, 3]
-  print(list.map((int element) => element * 2)); // [2, 4, 6]
 
   switch (value) {
     case '0':
@@ -66,10 +63,19 @@ class _CalculatorState extends State<Calculator> {
     case '-':
     case '/':
     case '*':
+      
       onNewSymbol(value);
       break;
+      
     case '=':
       onEquals();
+      break;
+    case '.':
+      onDecimal();
+      break;
+    case 'C':
+    case 'CE':
+      onDelete();
  }
 
  // Force l'interface à se redessiner
@@ -91,6 +97,14 @@ void onNewSymbol(String digit) {
 }
 
 void onEquals() {
+ // TODO
+}
+
+void onDecimal() {
+ // TODO
+}
+
+void onDelete() {
  // TODO
 }
 
